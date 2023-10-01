@@ -1,0 +1,11 @@
+
+export default async function getData(url){
+    let Base= process.env.BASE_URL
+    const res = await fetch(`${Base}/api/${url}`)
+
+    if(!res.ok){
+        throw new Error('Something went wrong')
+    }
+
+    return res.json()
+}
